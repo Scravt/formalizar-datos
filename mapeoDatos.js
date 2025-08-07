@@ -7,10 +7,10 @@ const claves = [
     'tipoEmpresa', 'usuario', 'estado'
 ];
 
-export const mapeoDatos = async () => {
+export const mapeoDatos = async (contenidoTexto) => {
     try {
-        const datos = await leer();
-        const lineas = datos.split('\n');
+        
+        const lineas = contenidoTexto.split('\n');
 
         return lineas.map(linea => {
             if (linea.trim() === '') {
@@ -29,6 +29,3 @@ export const mapeoDatos = async () => {
     }
 };
 
-
-// Para usar await en el scope principal, necesitas la versión de Node.js que lo soporta
-// O envolverlo en una función asíncrona.
