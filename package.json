@@ -1,16 +1,23 @@
 {
-  "name": "formalizar-datos",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "procesador-excel",
   "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "createExcel.js",
+  "bin": {
+    "procesador": "./createExcel.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "exceljs": "^4.4.0"
+  "pkg": {
+    "scripts": [
+      "createExcel.js",
+      "mapeoDatos.js",
+      "readText.js"
+    ],
+    "assets": [
+      "*.txt"
+    ],
+    "targets": ["node18-win-x64"],
+    "outputPath": "dist"
+  },
+  "scripts": {
+    "build": "pkg . --output dist/procesador.exe"
   }
 }
